@@ -1,6 +1,7 @@
 from model import *
 from data import *
 import sys
+import decimal
 
 rnn = torch.load('char-rnn-classification.pt')
 
@@ -21,7 +22,7 @@ def predict(line, n_predictions=3):
     predictions = []
 
     for i in range(n_predictions):
-        value = topv[0][i]
+        value = float(topv[0][i])
         category_index = topi[0][i]
         print('(%.2f) %s' % (value, all_categories[category_index]))
         predictions.append([value, all_categories[category_index]])
