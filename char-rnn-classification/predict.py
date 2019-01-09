@@ -1,7 +1,6 @@
 from model import *
 from data import *
 import sys
-import decimal
 
 rnn = torch.load('char-rnn-classification.pt')
 
