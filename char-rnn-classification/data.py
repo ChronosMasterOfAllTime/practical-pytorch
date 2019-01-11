@@ -32,8 +32,8 @@ def readLines(filename):
 # Build the category_lines dictionary, a list of lines per category
 category_lines = {}
 all_categories = []
-for filename in findFiles('../data/names/*.txt'):
-    category = filename.split('/')[-1].split('.')[0]
+for filename in findFiles('../data/*.txt'):
+    category = filename.split('\\')[-1].split('.txt')[0]
     all_categories.append(category)
     lines = readLines(filename)
     category_lines[category] = lines
